@@ -54,8 +54,6 @@ def prob_fin(lands_min,lands_max,n_mulligan,lands, cards_tot, primeiro_free): #p
 
     return res
 
-
-import matplotlib.pyplot as plt
 def mulligan_fixo(lands_min,lands_max,n_mulligan, cards_tot, primeiro_free):
     x=[]
     y=[]
@@ -70,16 +68,6 @@ def mulligan_fixo(lands_min,lands_max,n_mulligan, cards_tot, primeiro_free):
     for j in range(0,20):
         top_jumps_pos.append(delta.index(top_jumps_val[19-j])+1) #posição dos 3 maiores saltos
     return x,y, top_jumps_pos
-
-
-def plot_mulligan_fixo(lands_min,lands_max,n_mulligan, cards_tot, primeiro_free):
-    xpoints,ypoints, top_jumps_pos =mulligan_fixo(lands_min,lands_max,n_mulligan, cards_tot, primeiro_free)
-
-    plt.plot(xpoints, ypoints)
-    plt.xlabel("Terrenos no Deck")
-    plt.ylabel("Probabilidade de iniciar no range")
-    plt.grid()
-    return plt.show(), print(f'Biggest jumps in probability happen at these thresholds, in order: {top_jumps_pos}')
 
 
 cards_mao = 7 #cards na sua mão - inicia como 7
